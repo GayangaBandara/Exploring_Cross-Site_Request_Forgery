@@ -11,10 +11,10 @@
       <p class="error">{{ error }}</p>
       {% endif %}
       <form method="POST" action="{{ url_for('login') }}">
-        <label>Username: <input type="text" name="username" required /></label
-        ><br />
-        <label>Password: <input type="password" name="password" required /></label
-        ><br />
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" required />
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" required />
         <button type="submit">Login</button>
       </form>
     </div>
