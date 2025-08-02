@@ -2,18 +2,21 @@
 <html>
   <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
-    <h1>Profile</h1>
-    {% if message %}
-    <p style="color: green">{{ message }}</p>
-    {% endif %}
-    <p>Current Email: {{ email }}</p>
-    <form method="POST" action="{{ url_for('profile') }}">
-      {{ form.hidden_tag() }}
-      <label>New Email: {{ form.email() }}</label><br />
-      {{ form.submit() }}
-    </form>
-    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    <div class="container">
+      <h1>Profile</h1>
+      {% if message %}
+      <p class="message">{{ message }}</p>
+      {% endif %}
+      <p>Current Email: {{ email }}</p>
+      <form method="POST" action="{{ url_for('profile') }}">
+        {{ form.hidden_tag() }}
+        <label>New Email: {{ form.email() }}</label><br />
+        {{ form.submit() }}
+      </form>
+      <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
   </body>
 </html>
